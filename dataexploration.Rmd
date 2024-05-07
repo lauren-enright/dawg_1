@@ -87,11 +87,12 @@ site_level %>%
 site_level %>%
   dplyr::filter(taxa %in% c("Coral", "Algal.Turf", "Crustose.Corallines", "Lobophora.variegata", 
                             "Asparagopsis.taxiformis")) %>%
-  dplyr::filter(Habitat == "Outer 10") %>%
+  dplyr::filter(Habitat == "Backreef") %>%
   #dplyr::filter(Site == "LTER 1") %>%
   ggplot(aes(x = Year, y = mean_site_cover, color = taxa, group = taxa)) +
   geom_point() +
   geom_line() +
+  scale_color_fish_d(option = "Coryphaena_hippurus")+
   geom_errorbar(aes(ymax = mean_site_cover + site_se,
                 ymin = mean_site_cover - site_se)) +
   facet_wrap(~Site)
