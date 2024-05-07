@@ -73,7 +73,8 @@ site_level %>%
   geom_line() +
   geom_errorbar(aes(ymax = mean_site_cover + site_se,
                 ymin = mean_site_cover - site_se)) +
-  facet_wrap(~Site)
+  facet_wrap(~Site) +
+  theme_classic()
 ```
 
 ```{r forereef 10}
