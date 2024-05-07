@@ -11,6 +11,8 @@ knitr::opts_chunk$set(echo = TRUE)
 library(here)
 library(dplyr)
 library(tidyverse)
+#install.packages("fishualize")
+library(fishualize)
 
 data <- read.csv(here("data", "allbenthicdata_cleaned.csv"), stringsAsFactors = F) # replacements don't work when strings are factors
 
@@ -48,6 +50,7 @@ site_level %>%
   #dplyr::filter(Site == "LTER 1") %>%
   ggplot(aes(x = Year, y = mean_site_cover, color = taxa, group = taxa)) +
   geom_point() +
+  scale_color_fish_d(option = "Coryphaena_hippurus")+
   geom_line() +
   geom_errorbar(aes(ymax = mean_site_cover + site_se,
                 ymin = mean_site_cover - site_se)) +
