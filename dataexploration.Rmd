@@ -104,7 +104,7 @@ site_level %>%
 
 site_level %>%
   dplyr::filter(taxa %in% c("Coral", "Algal.Turf", "Crustose.Corallines", "Lobophora.variegata", 
-                            "Asparagopsis.taxiformis")) %>%
+                            "Asparagopsis.taxiformis", "Bare.Space")) %>%
   dplyr::filter(Habitat == "Outer 17") %>%
   #dplyr::filter(Site == "LTER 1") %>%
   ggplot(aes(x = Year, y = mean_site_cover, color = taxa, group = taxa)) +
