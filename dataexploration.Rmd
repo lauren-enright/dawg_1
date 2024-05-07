@@ -103,8 +103,6 @@ site_level %>%
 #forereef 
 
 site_level %>%
-  dplyr::filter(taxa %in% c("Algal.Turf", "Crustose.Corallines", "Lobophora.variegata", 
-                            "Asparagopsis.taxiformis")) %>%
   dplyr::filter(taxa %in% c("Coral", "Algal.Turf", "Crustose.Corallines", "Lobophora.variegata", 
                             "Asparagopsis.taxiformis", "Bare.Space")) %>%
   dplyr::filter(Habitat == "Outer 17") %>%
